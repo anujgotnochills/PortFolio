@@ -1,35 +1,37 @@
-import { Film } from "lucide-react";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Film className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">Editorial Edge</span>
-          </Link>
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+    <header className="sticky top-0 z-50 w-full border-b border-border/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-20 items-center justify-between">
+        <Link href="/" className="text-2xl font-bold text-foreground">
+          ANUJ
+        </Link>
+        <div className="flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 text-lg font-medium">
             <Link
-              href="#portfolio"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              href="#work"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
-              Portfolio
+              WORK
             </Link>
             <Link
-              href="#testimonials"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              href="#about"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
-              Testimonials
+              ABOUT
             </Link>
             <Link
               href="#contact"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
-              Contact
+              CONTACT
             </Link>
           </nav>
+          <Button asChild className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90">
+             <Link href="#contact">GET IN TOUCH</Link>
+          </Button>
         </div>
       </div>
     </header>
