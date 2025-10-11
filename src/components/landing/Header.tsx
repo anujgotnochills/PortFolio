@@ -15,12 +15,6 @@ export function Header() {
             Home
           </Link>
           <Link
-            href="#about"
-            className="text-foreground transition-colors hover:text-primary"
-          >
-            About
-          </Link>
-          <Link
             href="#skills"
             className="text-foreground transition-colors hover:text-primary"
           >
@@ -31,6 +25,12 @@ export function Header() {
             className="text-foreground transition-colors hover:text-primary"
           >
             Projects
+          </Link>
+          <Link
+            href="#about"
+            className="text-foreground transition-colors hover:text-primary"
+          >
+            About Me
           </Link>
           <Link
             href="#testimonials"
