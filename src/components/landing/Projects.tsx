@@ -1,0 +1,114 @@
+export function Projects() {
+  const shortVideos = [
+    {
+      title: "Short Form Content",
+      videoId: "TTAIMgm2O9A",
+      description: "Engaging short-form content"
+    },
+    {
+      title: "Creative Edit",
+      videoId: "qJJ60OzZ-Mo",
+      description: "Creative storytelling"
+    },
+    {
+      title: "Viral Short",
+      videoId: "Ri9zFMqUcdE",
+      description: "Viral content creation"
+    },
+    {
+      title: "Trending Content",
+      videoId: "oLXRm6JUjis",
+      description: "Trending video edit"
+    }
+  ];
+
+  const longVideos = [
+    {
+      title: "Live Stream Highlights",
+      videoId: "hSUk6SpPLZg",
+      description: "Professional live stream editing"
+    },
+    {
+      title: "Documentary Style",
+      videoId: "bl08pGBUSlA",
+      description: "Long-form documentary content"
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-24 bg-background">
+      <div className="container px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4">My Projects</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A showcase of my video editing work across different formats
+          </p>
+        </div>
+        
+        {/* Short Videos Section */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-3xl font-bold text-primary">Short Videos</h3>
+            <div className="flex-1 h-px bg-border"></div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {shortVideos.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-colors group"
+              >
+                <div className="aspect-[9/16] relative bg-black">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="text-lg font-bold group-hover:text-primary transition-colors mb-1">
+                    {project.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Long Videos Section */}
+        <div>
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-3xl font-bold text-primary">Long Videos</h3>
+            <div className="flex-1 h-px bg-border"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {longVideos.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-colors group"
+              >
+                <div className="aspect-video relative bg-black">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="p-6">
+                  <h4 className="text-xl font-bold group-hover:text-primary transition-colors mb-2">
+                    {project.title}
+                  </h4>
+                  <p className="text-muted-foreground">{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

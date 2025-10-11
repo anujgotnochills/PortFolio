@@ -1,40 +1,38 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Youtube, Mail } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="bg-background border-t border-border/20">
-      <div className="container flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
+      <div className="container flex flex-col items-center justify-between gap-6 py-12 md:flex-row px-8">
         <div className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Anuj. All rights reserved.
+          © {new Date().getFullYear()} Anuj - Video Editor. All rights reserved.
         </div>
         <div className="flex items-center gap-6">
           <Link
-            href="#"
+            href="https://www.instagram.com/anujgotnochills/"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
-            <Twitter className="h-5 w-5" />
-            <span className="sr-only">Twitter</span>
+            <Instagram className="h-6 w-6" />
+            <span className="sr-only">Instagram</span>
           </Link>
           <Link
-            href="#"
+            href="https://www.youtube.com/@anujgotnochills"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
-            <Github className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
+            <Youtube className="h-6 w-6" />
+            <span className="sr-only">YouTube</span>
           </Link>
           <Link
-            href="#"
-            target="_blank"
-            rel="noreferrer"
+            href="#contact"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
-            <Linkedin className="h-5 w-5" />
-            <span className="sr-only">LinkedIn</span>
+            <Mail className="h-6 w-6" />
+            <span className="sr-only">Email</span>
           </Link>
         </div>
       </div>

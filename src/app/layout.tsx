@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Anuj's Portfolio",
-  description: "Video Editor & Motion Designer",
+  title: "Anuj - Video Editor Portfolio",
+  description: "Professional video editor with 2+ years of experience. Turning raw clips into captivating stories. Specializing in video editing, motion graphics, and color grading.",
 };
 
 export default function RootLayout({
