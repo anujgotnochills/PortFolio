@@ -24,12 +24,6 @@ export function Header() {
               Testimonials
             </Link>
             <Link
-              href="#analyzer"
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-            >
-              AI Analyzer
-            </Link>
-            <Link
               href="#contact"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
