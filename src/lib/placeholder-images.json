@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "commercial-1",
+      "description": "A dynamic shot from a commercial project.",
+      "imageUrl": "https://picsum.photos/seed/comm1/600/400",
+      "imageHint": "product video"
+    },
+    {
+      "id": "commercial-2",
+      "description": "A stylish scene from a fashion commercial.",
+      "imageUrl": "https://picsum.photos/seed/comm2/600/400",
+      "imageHint": "fashion film"
+    },
+    {
+      "id": "narrative-1",
+      "description": "A dramatic moment from a short film.",
+      "imageUrl": "https://picsum.photos/seed/narr1/600/400",
+      "imageHint": "short film"
+    },
+    {
+      "id": "narrative-2",
+      "description": "An intimate character portrait from a narrative piece.",
+      "imageUrl": "https://picsum.photos/seed/narr2/600/400",
+      "imageHint": "character drama"
+    },
+    {
+      "id": "documentary-1",
+      "description": "An interview setup from a documentary.",
+      "imageUrl": "https://picsum.photos/seed/doc1/600/400",
+      "imageHint": "interview setup"
+    },
+    {
+      "id": "documentary-2",
+      "description": "A shot from a nature documentary.",
+      "imageUrl": "https://picsum.photos/seed/doc2/600/400",
+      "imageHint": "nature documentary"
+    }
+  ]
 }
