@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useEffect, useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ function SubmitButton() {
 
 export function Contact() {
   const initialState = { message: "", status: "idle" as const };
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export function Contact() {
         title: "Message Sent!",
         description: state.message,
       });
-      // A bit of a hack to reset form, but common with useFormState
+      // A bit of a hack to reset form, but common with useActionState
       const form = document.querySelector("#contact-form") as HTMLFormElement;
       if(form) form.reset();
 
