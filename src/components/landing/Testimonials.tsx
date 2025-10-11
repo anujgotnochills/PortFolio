@@ -10,7 +10,7 @@ export function Testimonials() {
     },
     {
       name: "Avinash Kumar",
-      role: "Stream Designer",
+      role: "Business Owner",
       content: "Anuj is working so efficiently and delevered my video as per my satisfaction I am fully satisfied what I see in anuj that he doesn't know only editing briefly he knows that what to skip in video or what to continue in it that's important for a good editor, that's I liked as it is called professional",
       screenshot: "/testimonials/client2-chat.png" // Add your screenshot path here
     },

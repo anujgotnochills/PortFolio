@@ -38,7 +38,7 @@ export function About() {
 
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-primary">250+</h3>
+                <h3 className="text-3xl font-bold text-primary">60+</h3>
                 <p className="text-foreground">Projects Completed</p>
               </div>
               <div className="space-y-2">
@@ -46,7 +46,7 @@ export function About() {
                 <p className="text-foreground">Client Satisfaction</p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-primary">2+</h3>
+                <h3 className="text-3xl font-bold text-primary">1+</h3>
                 <p className="text-foreground">Years Experience</p>
               </div>
               <div className="space-y-2">

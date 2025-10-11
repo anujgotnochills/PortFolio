@@ -39,7 +39,7 @@ export function Hero() {
                 <p className="text-xs sm:text-sm text-foreground leading-tight">years<br className="sm:hidden" /> experience</p>
               </div>
               <div className="space-y-1 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl p-2 sm:p-3 md:p-4">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary">100+</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary">60+</h3>
                 <p className="text-xs sm:text-sm text-foreground leading-tight">projects<br className="sm:hidden" /> done</p>
               </div>
               <div className="space-y-1 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl p-2 sm:p-3 md:p-4">
