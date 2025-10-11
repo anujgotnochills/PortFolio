@@ -7,7 +7,7 @@ export function Hero() {
       <div className="container px-6 sm:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-4 sm:space-y-6">
-            {/* Heading with Glass Effect */}
+            {/* Heading with Glass Effectdsdsd */}
             <div className="space-y-2 sm:space-y-3 backdrop-blur-xl bg-card/30 border border-border/50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl text-center">
               <p className="text-base sm:text-lg md:text-xl text-muted-foreground">Hey, I'm</p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
