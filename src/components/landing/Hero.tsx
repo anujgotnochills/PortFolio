@@ -1,29 +1,55 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Star } from "lucide-react";
 
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24">
       <div className="container px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
+        <div className="max-w-5xl mx-auto">
           <div className="space-y-8">
-            <div className="flex items-center gap-2">
-              <Star className="w-16 h-16 text-primary fill-primary" />
-            </div>
-            <div className="space-y-4">
-              <p className="text-2xl text-muted-foreground">Hey, I'm</p>
-              <h1 className="text-6xl md:text-7xl font-bold">
-                <span className="text-primary">Anuj</span>
+            {/* Heading with Glass Effect */}
+            <div className="space-y-4 backdrop-blur-xl bg-card/30 border border-border/50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl text-center">
+              <p className="text-xl sm:text-2xl text-muted-foreground">Hey, I'm</p>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold">
+                <span className="text-primary drop-shadow-[0_0_25px_rgba(190,242,100,0.5)]">Anuj</span>
                 <br />
                 <span className="text-foreground">Video Editor</span>
               </h1>
-              <p className="text-xl md:text-2xl text-foreground italic max-w-lg">
+              <p className="text-lg sm:text-xl md:text-2xl text-foreground italic max-w-2xl mx-auto">
                 Turning raw clips into captivating stories.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+
+            {/* Profile Image */}
+            <div className="relative">
+              <div className="relative w-full max-w-[300px] md:max-w-[400px] mx-auto aspect-square">
+                <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
+                <img
+                  src="/profile-image.jpg"
+                  alt="Anuj - Video Editor"
+                  className="relative w-full h-full object-cover rounded-full border-4 border-primary/50 shadow-2xl"
+                />
+              </div>
+            </div>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-3xl mx-auto">
+              <div className="space-y-1 sm:space-y-2 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">1+</h3>
+                <p className="text-xs sm:text-sm md:text-base text-foreground leading-tight">years<br className="sm:hidden" /> experience</p>
+              </div>
+              <div className="space-y-1 sm:space-y-2 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">100+</h3>
+                <p className="text-xs sm:text-sm md:text-base text-foreground leading-tight">projects<br className="sm:hidden" /> done</p>
+              </div>
+              <div className="space-y-1 sm:space-y-2 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">99%</h3>
+                <p className="text-xs sm:text-sm md:text-base text-foreground leading-tight">satisfaction</p>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="https://www.instagram.com/anujgotnochills/"
                 target="_blank"
@@ -38,26 +64,6 @@ export function Hero() {
                   Browse Projects >>>
                 </Button>
               </Link>
-            </div>
-          </div>
-
-          {/* Right side - Stats */}
-          <div className="relative">
-            <div className="bg-card rounded-3xl p-12 border border-border">
-              <div className="grid grid-cols-1 gap-8">
-                <div className="space-y-2">
-                  <h3 className="text-5xl font-bold text-primary">2+</h3>
-                  <p className="text-lg text-foreground">years of experience</p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-5xl font-bold text-primary">250+</h3>
-                  <p className="text-lg text-foreground">projects completed</p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-5xl font-bold text-primary">99%</h3>
-                  <p className="text-lg text-foreground">client satisfaction</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import { About } from "@/components/landing/About";
 import { Skills } from "@/components/landing/Skills";
 import { Projects } from "@/components/landing/Projects";
 import { Testimonials } from "@/components/landing/Testimonials";
-import { Contact } from "@/components/landing/Contact";
 import { Footer } from "@/components/landing/Footer";
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <Projects />
         <About />
         <Testimonials />
-        <Contact />
       </main>
       <Footer />
     </div>

@@ -1,38 +1,49 @@
+import { AlignCenter } from "lucide-react";
+
 export function Projects() {
+  // SHORT VIDEOS - Replace videoId with your YouTube video IDs
   const shortVideos = [
     {
       title: "Short Form Content",
-      videoId: "TTAIMgm2O9A",
+      videoId: "TTAIMgm2O9A", // <-- CHANGE THIS: YouTube video ID
       description: "Engaging short-form content"
     },
     {
       title: "Creative Edit",
-      videoId: "qJJ60OzZ-Mo",
+      videoId: "qJJ60OzZ-Mo", // <-- CHANGE THIS: YouTube video ID
       description: "Creative storytelling"
     },
     {
       title: "Viral Short",
-      videoId: "Ri9zFMqUcdE",
+      videoId: "Ri9zFMqUcdE", // <-- CHANGE THIS: YouTube video ID
       description: "Viral content creation"
     },
     {
       title: "Trending Content",
-      videoId: "oLXRm6JUjis",
+      videoId: "oLXRm6JUjis", // <-- CHANGE THIS: YouTube video ID
       description: "Trending video edit"
     }
   ];
 
-  const longVideos = [
+  // LONG VIDEOS - Replace videoId with your YouTube video IDs or Instagram embed URLs
+  const longVideos = [ 
     {
       title: "Live Stream Highlights",
-      videoId: "hSUk6SpPLZg",
+      videoId: "hSUk6SpPLZg", // <-- CHANGE THIS: YouTube video ID
       description: "Professional live stream editing"
     },
-    {
-      title: "Documentary Style",
-      videoId: "bl08pGBUSlA",
-      description: "Long-form documentary content"
-    }
+    // {
+    //   title: "Documentary Style",
+    //   videoId: "bl08pGBUSlA", // <-- CHANGE THIS: YouTube video ID
+    //   description: "Long-form documentary content"
+    // },
+    // Example Instagram video - uncomment and replace with your Instagram post ID
+    // {
+    //   title: "Instagram Long Form",
+    //   videoId: "https://www.instagram.com/p/DPnyLkHEuah/", // <-- Instagram embed URL
+    //   description: "Instagram long-form video content",
+    //   platform: "instagram"
+    // }
   ];
 
   return (
@@ -90,13 +101,23 @@ export function Projects() {
                 className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-colors group"
               >
                 <div className="aspect-video relative bg-black">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full"
-                    style={{ border: 0 }}
-                  />
+                  {(project as any).platform === "instagram" ? (
+                    <iframe
+                      src={(project as any).videoId}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                    />
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                    />
+                  )}
                 </div>
                 <div className="p-6">
                   <h4 className="text-xl font-bold group-hover:text-primary transition-colors mb-2">
@@ -106,6 +127,13 @@ export function Projects() {
                 </div>
               </div>
             ))}
+          </div>
+          
+          {/* Next Maybe Yours - Neon Text */}
+          <div className="mt-12 text-center">
+            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary animate-pulse drop-shadow-[0_0_20px_rgba(190,242,100,0.8)]">
+              Next Maybe Yours
+            </p>
           </div>
         </div>
       </div>

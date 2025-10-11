@@ -7,8 +7,8 @@ export function About() {
           <div className="relative">
             <div className="aspect-[3/4] bg-card rounded-3xl overflow-hidden border border-border">
               <img
-                src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=1000&fit=crop"
-                alt="Video editing workspace"
+                src="/about-image.jpg"
+                alt="Anuj - Video Editor"
                 className="w-full h-full object-cover"
               />
             </div>
