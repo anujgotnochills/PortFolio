@@ -1,7 +1,7 @@
 import { AlignCenter } from "lucide-react";
 
 export function Projects() {
-  // SHORT VIDEOS - Replace videoId with your YouTube video IDs
+  // SHORT VIDEOS - Replace videoId with your YouTube video IDs or Instagram reel URLs
   const shortVideos = [
     {
       title: "Short Form Content",
@@ -22,13 +22,38 @@ export function Projects() {
       title: "Trending Content",
       videoId: "oLXRm6JUjis", // <-- CHANGE THIS: YouTube video ID
       description: "Trending video edit"
-    }
+    },
+    // Example Instagram Reel - uncomment and replace with your Instagram reel URL
+    {
+      title: "Visual storytelling",
+      videoId: "https://www.instagram.com/reel/DQzHVNoCW25/embed", // <-- Instagram reel embed URL
+      description: "Instagram Reel",
+      platform: "instagram"
+    },
+    {
+      title: "Education Edit",
+      videoId: "https://www.instagram.com/reel/DQMlNg7DFCB/embed", // <-- Instagram reel embed URL
+      description: "Instagram Reel",
+      platform: "instagram"
+    },
+    {
+      title: "AI-Based Edit",
+      videoId: "https://www.instagram.com/reel/DQb6UCYEh2F/embed", // <-- Instagram reel embed URL
+      description: "AI-Based Reel",
+      platform: "instagram"
+    },
+    // {
+    //   title: "My Video",
+    //   videoId: "/videos/my-video.mp4", // Put video in public/videos/
+    //   description: "Description",
+    //   platform: "direct"
+    // }
   ];
 
   // LONG VIDEOS - Replace videoId with your YouTube video IDs or Instagram embed URLs
   const longVideos = [ 
     {
-      title: "Live Stream Highlights",
+      title: "Education Video",
       videoId: "hSUk6SpPLZg", // <-- CHANGE THIS: YouTube video ID
       description: "Professional live stream editing"
     },
@@ -40,7 +65,7 @@ export function Projects() {
     // Example Instagram video - uncomment and replace with your Instagram post ID
     // {
     //   title: "Instagram Long Form",
-    //   videoId: "https://www.instagram.com/p/DPnyLkHEuah/", // <-- Instagram embed URL
+    //   videoId: "https://www.instagram.com/reel/DQzHVNoCW25", // <-- Instagram embed URL
     //   description: "Instagram long-form video content",
     //   platform: "instagram"
     // }
@@ -69,13 +94,30 @@ export function Projects() {
                 className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary transition-colors group"
               >
                 <div className="aspect-[9/16] relative bg-black">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full"
-                    style={{ border: 0 }}
-                  />
+                  {(project as any).platform === "instagram" ? (
+                    <iframe
+                      src={(project as any).videoId}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                    />
+                  ) : (project as any).platform === "direct" ? (
+                    <video
+                      src={(project as any).videoId}
+                      controls
+                      className="w-full h-full object-cover"
+                      playsInline
+                    />
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${project.videoId}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                    />
+                  )}
                 </div>
                 <div className="p-4">
                   <h4 className="text-lg font-bold group-hover:text-primary transition-colors mb-1">
