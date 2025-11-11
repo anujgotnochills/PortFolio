@@ -10,13 +10,13 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-6">
           <Link
-            href="https://www.instagram.com/anujgotnochills/"
+            href="https://wa.me/8447836894"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground transition-colors hover:text-primary"
           >
             <Instagram className="h-6 w-6" />
-            <span className="sr-only">Instagram</span>
+            <span className="sr-only">WhatsApp</span>
           </Link>
           <Link
             href="https://www.youtube.com/@anujgotnochills"

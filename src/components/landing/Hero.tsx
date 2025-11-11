@@ -51,7 +51,7 @@ export function Hero() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
               <Link
-                href="https://www.instagram.com/anujgotnochills/"
+                href="https://wa.me/8447836894"
                 target="_blank"
                 rel="noopener noreferrer"
               >
