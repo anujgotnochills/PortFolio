@@ -81,7 +81,7 @@ export function Projects() {
           </p>
         </div>
         
-        {/* Short Videos Section */}
+        {/* Short Videos Sectio */}
         <div className="mb-20">
           <div className="flex items-center gap-4 mb-8">
             <h3 className="text-3xl font-bold text-primary">Short Videos</h3>
