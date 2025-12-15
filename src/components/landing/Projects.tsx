@@ -14,15 +14,26 @@ export function Projects() {
       description: "Creative storytelling"
     },
     {
-      title: "Viral Short",
+      title: "Viral Short", 
       videoId: "Ri9zFMqUcdE", // <-- CHANGE THIS: YouTube video ID
       description: "Viral content creation"
+    },
+        {
+      title: "Real Estate",
+      videoId: "zsQ9OBWwJu4", // Put video in public/videos/
+      description: "Real estate video",
+    },
+    {
+      title: "Typography",
+      videoId: "44hzJZnA4Wo", // Put video in public/videos/
+      description: "Trending Typography Edit",
     },
     {
       title: "Trending Content",
       videoId: "oLXRm6JUjis", // <-- CHANGE THIS: YouTube video ID
       description: "Trending video edit"
     },
+
     // Example Instagram Reel - uncomment and replace with your Instagram reel URL
     {
       title: "Visual storytelling",
@@ -36,18 +47,7 @@ export function Projects() {
       description: "Instagram Reel",
       platform: "instagram"
     },
-    {
-      title: "AI-Based Edit",
-      videoId: "https://www.instagram.com/reel/DQb6UCYEh2F/embed", // <-- Instagram reel embed URL
-      description: "AI-Based Reel",
-      platform: "instagram"
-    },
-    // {
-    //   title: "My Video",
-    //   videoId: "/videos/my-video.mp4", // Put video in public/videos/
-    //   description: "Description",
-    //   platform: "direct"
-    // }
+
   ];
 
   // LONG VIDEOS - Replace videoId with your YouTube video IDs or Instagram embed URLs
