@@ -34,7 +34,7 @@ export function Projects() {
       description: "Trending video edit"
     },
 
-    // Example Instagram Reel - uncomment and replace with your Instagram reel URL
+    // Example Instagram Reel - uncomment and replace your Instagram reel URL
     {
       title: "Visual storytelling",
       videoId: "https://www.instagram.com/reel/DQzHVNoCW25/embed", // <-- Instagram reel embed URL
