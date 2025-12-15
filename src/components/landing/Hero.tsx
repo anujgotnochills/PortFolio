@@ -61,7 +61,7 @@ export function Hero() {
               </Link>
               <Link href="#projects">
                 <Button variant="ghost" className="text-foreground hover:text-primary text-base sm:text-lg px-4 py-4 sm:px-6 sm:py-5">
-                  Browse Projects >>>
+                  Browse Projects {"»»»"}
                 </Button>
               </Link>
             </div>
