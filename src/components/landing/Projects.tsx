@@ -34,19 +34,19 @@ export function Projects() {
       description: "Trending video edit"
     },
 
-    // Example Instagram Reel - uncomment and replace your Instagram reel URL
-    {
-      title: "Visual storytelling",
-      videoId: "https://www.instagram.com/reel/DQzHVNoCW25/embed", // <-- Instagram reel embed URL
-      description: "Instagram Reel",
-      platform: "instagram"
-    },
-    {
-      title: "Education Edit",
-      videoId: "https://www.instagram.com/reel/DQMlNg7DFCB/embed", // <-- Instagram reel embed URL
-      description: "Instagram Reel",
-      platform: "instagram"
-    },
+    // Example Instagram Reel - unnjhkcomment and replace your Instagram reel URL
+    // {
+    //   title: "Visual storytelling",
+    //   videoId: "https://www.instagram.com/reel/DQzHVNoCW25/embed", // <-- Instagram reel embed URL
+    //   description: "Instagram Reel",
+    //   platform: "instagram"
+    // },
+    // {
+    //   title: "Education Edit",
+    //   videoId: "https://www.instagram.com/reel/DQMlNg7DFCB/embed", // <-- Instagram reel embed URL
+    //   description: "Instagram Reel",
+    //   platform: "instagram"
+    // }, 
 
   ];
 
