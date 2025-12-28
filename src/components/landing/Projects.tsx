@@ -57,11 +57,11 @@ export function Projects() {
       videoId: "hSUk6SpPLZg", // <-- CHANGE THIS: YouTube video ID
       description: "Professional live stream editing"
     },
-    // {
-    //   title: "Documentary Style",
-    //   videoId: "bl08pGBUSlA", // <-- CHANGE THIS: YouTube video ID
-    //   description: "Long-form documentary content"
-    // },
+    {
+      title: "Long Form Promotional",
+      videoId: "YEBMWBDgmgM", // <-- CHANGE THIS: YouTube video ID
+      description: "Long-form documentary content"
+    },
     // Example Instagram video - uncomment and replace with your Instagram post ID
     // {
     //   title: "Instagram Long Form",
