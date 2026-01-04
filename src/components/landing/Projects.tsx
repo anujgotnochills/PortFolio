@@ -33,6 +33,11 @@ export function Projects() {
       videoId: "oLXRm6JUjis", // <-- CHANGE THIS: YouTube video ID
       description: "Trending video edit"
     },
+        {
+      title: "Wedding Content",
+      videoId: "FXEjzyvDbEg", // <-- CHANGE THIS: YouTube video ID
+      description: "Wedding video edit"
+    },
 
     // Example Instagram Reel - unnjhkcomment and replace your Instagram reel URL
     // {
@@ -62,6 +67,7 @@ export function Projects() {
       videoId: "YEBMWBDgmgM", // <-- CHANGE THIS: YouTube video ID
       description: "Long-form documentary content"
     },
+    
     // Example Instagram video - uncomment and replace with your Instagram post ID
     // {
     //   title: "Instagram Long Form",
