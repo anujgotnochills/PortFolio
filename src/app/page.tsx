@@ -6,7 +6,6 @@ import { Projects } from "@/components/landing/Projects";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Footer } from "@/components/landing/Footer";
 import { FloatingContact } from "@/components/ui/FloatingContact";
-import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingContact />
-      <ScrollToTop />
     </div>
   );
 }

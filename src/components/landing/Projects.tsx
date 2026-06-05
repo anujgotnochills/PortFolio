@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Mic2, Sparkles, Building2, Layers, PartyPopper, MonitorPlay, Play } from 'lucide-react';
+import { Mic2, Sparkles, Building2, Layers, PartyPopper, MonitorPlay, Play, ShoppingBag } from 'lucide-react';
 
 // ─── Category definitions ───────────────────────────────────────────────────
 
@@ -33,6 +33,10 @@ const eventWeddingReels = [
   { title: "Event Highlight", videoId: "JQJsodJL4Sk", description: "Cinematic event recap" },
   { title: "Wedding Moments", videoId: "FUMNpjAgReQ", description: "Beautiful wedding edit" },
   { title: "Celebration Reel", videoId: "Pvyk8liaZ-o", description: "Special occasions" },
+];
+
+const brandReels = [
+  { title: "Brand Reel / Apparel Campaign Edit", videoId: "PKi3C7QpxGE", description: "Engaging brand campaign" },
 ];
 
 const longFormVideos = [
@@ -115,7 +119,7 @@ function CategorySection({ title, icon, badge, videos, sectionRef, isLongForm }:
       {/* Video grid */}
       <div
         ref={sectionRef}
-        className={`grid ${isLongForm ? 'grid-cols-1 md:grid-cols-2 max-w-5xl' : 'grid-cols-2 max-w-4xl'} gap-3 sm:gap-4 md:gap-6 mx-auto`}
+        className={`grid ${isLongForm ? 'grid-cols-1 md:grid-cols-2 max-w-5xl' : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl'} gap-3 sm:gap-4 md:gap-6 mx-auto`}
       >
         {videos.map((video, i) => (
           <div
@@ -152,6 +156,7 @@ export function Projects() {
   const realRef = useRef<HTMLDivElement>(null);
   const aiRef = useRef<HTMLDivElement>(null);
   const eventRef = useRef<HTMLDivElement>(null);
+  const brandRef = useRef<HTMLDivElement>(null);
   const longFormRef = useRef<HTMLDivElement>(null);
 
   const categories = [
@@ -160,6 +165,7 @@ export function Projects() {
     { ref: realRef, label: 'Real Estate', icon: <Building2 size={20} />, badge: `${realEstateVideos.length} listings`, videos: realEstateVideos },
     { ref: aiRef, label: 'AI Videos', icon: <Sparkles size={20} />, badge: `${aiVideos.length} edits`, videos: aiVideos },
     { ref: eventRef, label: 'Event Reels & Wedding Highlights', icon: <PartyPopper size={20} />, badge: `${eventWeddingReels.length} edits`, videos: eventWeddingReels },
+    { ref: brandRef, label: 'Brand Reel / Apparel Campaign Edit', icon: <ShoppingBag size={20} />, badge: `${brandReels.length} reels`, videos: brandReels },
     { ref: longFormRef, label: 'Long Form', icon: <MonitorPlay size={20} />, badge: `${longFormVideos.length} videos`, videos: longFormVideos, isLongForm: true },
   ];
 
