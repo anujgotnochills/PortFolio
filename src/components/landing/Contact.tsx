@@ -55,12 +55,12 @@ export function Contact() {
   }, [state, toast]);
 
   return (
-    <section id="contact" className="bg-background py-24">
-      <div className="container max-w-2xl text-center px-8">
-         <h2 className="text-5xl font-bold mb-4">
+    <section id="contact" className="bg-background py-12 sm:py-16 md:py-20">
+      <div className="container w-full max-w-2xl text-center px-4 sm:px-6 md:px-8">
+         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
           Get In Touch
         </h2>
-        <p className="text-xl text-muted-foreground mb-12">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10">
           Have a project in mind? Let's work together to bring your vision to life.
         </p>
 

@@ -10,19 +10,19 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 7.5%;
     --popover-foreground: 0 0% 100%;
-    --primary: 74 89% 56%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 270 90% 65%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 33%;
     --muted-foreground: 0 0% 65%;
-    --accent: 74 89% 56%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 270 90% 65%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 74 89% 56%;
+    --ring: 270 90% 65%;
     --radius: 0.75rem;
   }
   .dark {
@@ -32,19 +32,19 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 7.5%;
     --popover-foreground: 0 0% 100%;
-    --primary: 74 89% 56%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 270 90% 65%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 33%;
     --muted-foreground: 0 0% 65%;
-    --accent: 74 89% 56%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 270 90% 65%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 25%;
     --input: 0 0% 25%;
-    --ring: 74 89% 56%;
+    --ring: 270 90% 65%;
   }
 }
 
@@ -54,10 +54,75 @@
   }
   
   html {
-    scroll-behavior: smooth;
+    /* Removed scroll-behavior: smooth; - Lenis will handle this */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
   }
   
   body {
     @apply bg-background text-foreground;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Prevent any element from creating horizontal scroll */
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Mobile touch optimizations */
+  button, 
+  a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* GPU acceleration for animated elements */
+  .will-animate {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Smooth transitions — only on interactive elements, not everything */
+  a, button, [role="button"] {
+    transition: color 0.2s ease, background-color 0.2s ease,
+                border-color 0.2s ease, box-shadow 0.2s ease,
+                opacity 0.2s ease;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
