@@ -77,14 +77,14 @@ function VideoPlayer({ videoId, isLongForm }: { videoId: string; isLongForm?: bo
   const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div 
+    <div
       className="relative w-full h-full cursor-pointer group flex items-center justify-center bg-zinc-900 overflow-hidden"
       onClick={() => setIsPlaying(true)}
     >
-      <img 
-        src={thumbnailUrl} 
-        alt="Video thumbnail" 
-        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100 ${isLongForm ? '' : 'scale-[1.35]'}`} 
+      <img
+        src={thumbnailUrl}
+        alt="Video thumbnail"
+        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100 ${isLongForm ? '' : 'scale-[1.35]'}`}
       />
       <div className="absolute w-12 h-12 sm:w-14 sm:h-14 bg-primary/90 rounded-full flex items-center justify-center text-primary-foreground shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-transform duration-300 group-hover:scale-110 z-10">
         <Play className="w-5 h-5 sm:w-6 sm:h-6 ml-1" fill="currentColor" />
@@ -147,20 +147,20 @@ function CategorySection({ title, icon, badge, videos, sectionRef, isLongForm }:
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
-  const motionRef  = useRef<HTMLDivElement>(null);
+  const motionRef = useRef<HTMLDivElement>(null);
   const podcastRef = useRef<HTMLDivElement>(null);
-  const realRef    = useRef<HTMLDivElement>(null);
-  const aiRef      = useRef<HTMLDivElement>(null);
-  const eventRef   = useRef<HTMLDivElement>(null);
+  const realRef = useRef<HTMLDivElement>(null);
+  const aiRef = useRef<HTMLDivElement>(null);
+  const eventRef = useRef<HTMLDivElement>(null);
   const longFormRef = useRef<HTMLDivElement>(null);
 
   const categories = [
-    { ref: motionRef,  label: 'Motion Graphics',  icon: <Layers size={20} />,    badge: `${motionGraphics.length} pieces`,  videos: motionGraphics },
-    { ref: podcastRef, label: 'Podcast Reel',    icon: <Mic2 size={20} />,      badge: `${podcastReels.length} reels`,   videos: podcastReels },
-    { ref: realRef,    label: 'Real Estate',      icon: <Building2 size={20} />, badge: `${realEstateVideos.length} listings`,videos: realEstateVideos },
-    { ref: aiRef,      label: 'AI Videos',       icon: <Sparkles size={20} />,  badge: `${aiVideos.length} edits`,   videos: aiVideos },
-    { ref: eventRef,   label: 'Event Reels & Wedding Highlights', icon: <PartyPopper size={20} />, badge: `${eventWeddingReels.length} edits`, videos: eventWeddingReels },
-    { ref: longFormRef,label: 'Long Form',       icon: <MonitorPlay size={20} />, badge: `${longFormVideos.length} videos`, videos: longFormVideos, isLongForm: true },
+    { ref: motionRef, label: 'Motion Graphics', icon: <Layers size={20} />, badge: `${motionGraphics.length} pieces`, videos: motionGraphics },
+    { ref: podcastRef, label: 'Podcast Reel', icon: <Mic2 size={20} />, badge: `${podcastReels.length} reels`, videos: podcastReels },
+    { ref: realRef, label: 'Real Estate', icon: <Building2 size={20} />, badge: `${realEstateVideos.length} listings`, videos: realEstateVideos },
+    { ref: aiRef, label: 'AI Videos', icon: <Sparkles size={20} />, badge: `${aiVideos.length} edits`, videos: aiVideos },
+    { ref: eventRef, label: 'Event Reels & Wedding Highlights', icon: <PartyPopper size={20} />, badge: `${eventWeddingReels.length} edits`, videos: eventWeddingReels },
+    { ref: longFormRef, label: 'Long Form', icon: <MonitorPlay size={20} />, badge: `${longFormVideos.length} videos`, videos: longFormVideos, isLongForm: true },
   ];
 
   useEffect(() => {
@@ -197,7 +197,7 @@ export function Projects() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="projects" className="relative py-6 sm:py-8 bg-background">
+    <section ref={sectionRef} id="projects" className="relative py-6 sm:py-8 bg-background scroll-mt-20 md:scroll-mt-24">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-60 shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
       <div className="container px-4 sm:px-6 md:px-8">
 

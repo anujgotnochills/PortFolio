@@ -73,7 +73,7 @@ export function Skills() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="skills" className="relative py-6 sm:py-8 bg-background">
+    <section ref={sectionRef} id="skills" className="relative py-6 sm:py-8 bg-background scroll-mt-20 md:scroll-mt-24">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-60 shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
       <div className="container px-6 sm:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-10">

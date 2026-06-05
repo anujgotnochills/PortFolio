@@ -5,7 +5,7 @@ import { Skills } from "@/components/landing/Skills";
 import { Projects } from "@/components/landing/Projects";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { Footer } from "@/components/landing/Footer";
-import { SectionDivider } from "@/components/ui/section-divider";
+import { FloatingContact } from "@/components/ui/FloatingContact";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
         <Testimonials />
       </main>
       <Footer />
+      <FloatingContact />
       <ScrollToTop />
     </div>
   );

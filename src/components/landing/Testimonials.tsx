@@ -81,7 +81,7 @@ export function Testimonials() {
   }, []);
 
   return (
-    <section ref={containerRef} id="testimonials" className="relative py-6 sm:py-8 bg-background overflow-hidden">
+    <section ref={containerRef} id="testimonials" className="relative py-6 sm:py-8 bg-background overflow-hidden scroll-mt-20 md:scroll-mt-24">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-60 shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
       <div className="container px-4 sm:px-6 md:px-8">
 
