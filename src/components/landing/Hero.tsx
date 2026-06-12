@@ -107,7 +107,7 @@ export function Hero() {
             {/* Stats */}
             <div ref={statsRef} className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-2xl mx-auto">
               <div className="space-y-1 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl p-2 sm:p-3 md:p-4 hover:border-primary hover:scale-105 transition-all duration-300 will-animate">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary">1+</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary">2+</h3>
                 <p className="text-xs sm:text-sm text-foreground leading-tight">years<br className="sm:hidden" /> experience</p>
               </div>
               <div className="space-y-1 text-center backdrop-blur-xl bg-card/30 border border-border/50 rounded-xl p-2 sm:p-3 md:p-4 hover:border-primary hover:scale-105 transition-all duration-300 will-animate">
@@ -132,7 +132,7 @@ export function Hero() {
                 </Button>
               </Link>
               <Link href="#projects">
-                <Button variant="ghost" className="text-foreground hover:text-primary hover:scale-110 transition-all text-base sm:text-lg px-4 py-4 sm:px-6 sm:py-5">
+                <Button variant="ghost" className="text-foreground hover:bg-primary/20 hover:text-primary hover:scale-110 transition-all rounded-2xl text-base sm:text-lg px-4 py-4 sm:px-6 sm:py-5">
                   Browse Projects {"»»»"}
                 </Button>
               </Link>

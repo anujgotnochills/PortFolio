@@ -90,7 +90,7 @@ export function About() {
               {[
                 { target: 60, label: 'Projects Completed' },
                 { target: 99, label: 'Client Satisfaction', suffix: '%' },
-                { target: 1,  label: 'Years Experience', suffix: '+' },
+                { target: 2,  label: 'Years Experience', suffix: '+' },
                 { target: 50, label: 'Happy Clients', suffix: '+' },
               ].map(({ target, label, suffix }) => (
                 <div key={label} className="space-y-1 sm:space-y-2 text-center">

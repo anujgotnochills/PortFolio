@@ -62,37 +62,105 @@ interface CategorySectionProps {
 }
 
 function VideoPlayer({ videoId, isLongForm }: { videoId: string; isLongForm?: boolean }) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMuted, setIsMuted]     = useState(true);
+  const iframeRef    = useRef<HTMLIFrameElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  if (isPlaying) {
-    return (
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full"
-        style={{ border: 0 }}
-      />
+  // Toggle iframe on/off as the card enters/leaves the viewport.
+  // rootMargin keeps the iframe alive 300px beyond the visible edges
+  // so it doesn't flicker during normal scrolling.
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: '300px 0px', threshold: 0 }
     );
-  }
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
-  // hqdefault is a 4:3 image (often with black bars for shorts).
-  // We use object-cover + scale on shorts to hide the horizontal black bars.
+  // Reset mute when video goes off-screen (iframe will be destroyed,
+  // and a fresh one always starts muted anyway).
+  useEffect(() => {
+    if (!isVisible) setIsMuted(true);
+  }, [isVisible]);
+
+  const embedSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&enablejsapi=1&controls=1&rel=0&playsinline=1`;
+
+  const sendCommand = (func: string, args: unknown[] = []) => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: 'command', func, args }),
+      '*'
+    );
+  };
+
+  const toggleMute = () => {
+    if (isMuted) {
+      sendCommand('unMute');
+      sendCommand('setVolume', [100]);
+    } else {
+      sendCommand('mute');
+    }
+    setIsMuted(prev => !prev);
+  };
+
   const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div
-      className="relative w-full h-full cursor-pointer group flex items-center justify-center bg-zinc-900 overflow-hidden"
-      onClick={() => setIsPlaying(true)}
-    >
-      <img
-        src={thumbnailUrl}
-        alt="Video thumbnail"
-        className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100 ${isLongForm ? '' : 'scale-[1.35]'}`}
-      />
-      <div className="absolute w-12 h-12 sm:w-14 sm:h-14 bg-primary/90 rounded-full flex items-center justify-center text-primary-foreground shadow-[0_0_20px_rgba(168,85,247,0.5)] transition-transform duration-300 group-hover:scale-110 z-10">
-        <Play className="w-5 h-5 sm:w-6 sm:h-6 ml-1" fill="currentColor" />
-      </div>
+    <div ref={containerRef} className="relative w-full h-full bg-zinc-900 overflow-hidden">
+      {isVisible ? (
+        <>
+          <iframe
+            ref={iframeRef}
+            src={embedSrc}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+            className="w-full h-full"
+            style={{ border: 0 }}
+          />
+          {/* Mute / Unmute overlay button */}
+          <button
+            onClick={toggleMute}
+            title={isMuted ? 'Unmute' : 'Mute'}
+            className="absolute bottom-3 right-3 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
+                       bg-black/70 text-white border border-white/20 backdrop-blur-sm
+                       hover:bg-primary/80 hover:border-primary transition-all duration-200 select-none"
+          >
+            {isMuted ? (
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <line x1="23" y1="9" x2="17" y2="15"/>
+                  <line x1="17" y1="9" x2="23" y2="15"/>
+                </svg>
+                Unmute
+              </>
+            ) : (
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                </svg>
+                Mute
+              </>
+            )}
+          </button>
+        </>
+      ) : (
+        /* Thumbnail shown while the video is off-screen */
+        <div className="relative w-full h-full flex items-center justify-center">
+          <img
+            src={thumbnailUrl}
+            alt="Video thumbnail"
+            loading="lazy"
+            className={`w-full h-full object-cover opacity-80 ${isLongForm ? '' : 'scale-[1.35]'}`}
+          />
+        </div>
+      )}
     </div>
   );
 }
