@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { Inter } from "next/font/google";
+import { Inter, Anton, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const anton = Anton({ subsets: ["latin"], weight: "400", variable: "--font-display" });
+const caveat = Caveat({ subsets: ["latin"], weight: "600", variable: "--font-hand" });
 
 export const metadata: Metadata = {
   title: "Anuj - Video Editor Portfolio",
   description: "Professional video editor with 2+ years of experience. Turning raw clips into captivating stories. Specializing in video editing, motion graphics, and color grading.",
+  manifest: '/site.webmanifest',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon.ico?v=orange-dot', type: 'image/x-icon', sizes: '16x16 32x32 48x48' },
+      { url: '/favicon-16x16.png?v=orange-dot', type: 'image/png', sizes: '16x16' },
+      { url: '/icon.png?v=orange-dot', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon.svg?v=orange-dot', type: 'image/svg+xml', sizes: 'any' },
     ],
-    apple: '/apple-icon.png',
+    apple: { url: '/apple-icon.png?v=orange-dot', sizes: '180x180', type: 'image/png' },
   },
 };
 
@@ -25,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
+          "min-h-screen font-sans antialiased",
+          inter.variable,
+          anton.variable,
+          caveat.variable
         )}
         suppressHydrationWarning
       >
