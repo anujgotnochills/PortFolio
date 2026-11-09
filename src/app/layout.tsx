@@ -3,7 +3,6 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Inter, Anton, Caveat } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { LenisProvider } from "@/components/providers/LenisProvider";
 import { homeUrl, siteConfig } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -73,10 +72,8 @@ export default function RootLayout({
         )}
         suppressHydrationWarning
       >
-        <LenisProvider>
-          {children}
-          <Toaster />
-        </LenisProvider>
+        {children}
+        <Toaster />
       </body>
     </html>
   );

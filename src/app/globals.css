@@ -35,11 +35,10 @@
   a, button { -webkit-tap-highlight-color: transparent; }
   a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
   button, a { touch-action: manipulation; }
-  html.lenis { height: auto; }
-  .lenis.lenis-smooth { scroll-behavior: auto !important; }
-  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-  .lenis.lenis-stopped { overflow: hidden; }
-  .lenis.lenis-scrolling iframe { pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 .portfolio-paper { max-width: 1520px; margin: 18px auto; width: calc(100% - 36px); border-radius: 34px; background: var(--cream); overflow: clip; }
@@ -93,13 +92,19 @@
 .project-card-footer h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; overflow-wrap: anywhere; }
 .project-card-footer p { font-family: 'Courier New',monospace; font-size: 13px; color: #70675e; }
 .project-player, .project-player iframe { width: 100%; height: 100%; }
-.project-player { position: relative; }
+.project-player { position: absolute; inset: 0; }
 .project-player iframe { border: 0; }
-.video-poster { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.youtube-player-host { position: absolute; inset: 0; }
+.youtube-player-host.is-preloading { visibility: hidden; pointer-events: none; }
+.video-poster { display: block; position: relative; width: 100%; height: 100%; overflow: hidden; border: 0; padding: 0; background: #1c1b19; cursor: pointer; color: white; }
+.video-poster:focus-visible { outline: 3px solid var(--cream); outline-offset: -5px; }
 .video-poster img { width: 100%; height: 100%; object-fit: cover; }
 .video-poster.is-short img { transform: scale(1.35); }
-.mute-button { position: absolute; right: 10px; bottom: 12px; display: flex; align-items: center; gap: 6px; background: #181818dc; color: white; padding: 7px 10px; border-radius: 30px; border: 1px solid #ffffff4a; font-size: 10px; }
-.mute-button:hover { background: var(--red); }
+.video-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-radius: 40px; background: #181818e6; font-size: 13px; white-space: nowrap; }
+.video-poster:hover .video-play { background: var(--red); }
+.stop-video-button { position: absolute; right: 8px; top: 8px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #181818e6; color: white; }
+.stop-video-button:hover { background: var(--red); }
+.video-fallback { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-radius: 30px; background: #181818e6; color: white; font-size: 12px; white-space: nowrap; }
 .work-outro { text-align: center; border-top: 1px solid #cfc8ba; padding-top: 28px; }
 .work-outro .handwritten { font-size: 30px; color: var(--red); }
 .skills-section { background: #edeade; }
@@ -199,8 +204,6 @@
   .project-card-footer { padding: 12px 5px 7px; }
   .project-card-footer h4 { font-size: 14px; }
   .project-card-footer p { font-size: 13px; line-height: 1.5; }
-  .mute-button { padding: 6px 7px; font-size: 9px; gap: 4px; right: 6px; bottom: 9px; }
-  .mute-button svg { width: 12px; height: 12px; }
   .work-outro .handwritten { font-size: 25px; }
   .skill-card { padding: 20px 14px; }
   .skill-top { margin-bottom: 24px; }
