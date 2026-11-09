@@ -7,7 +7,7 @@ export function Hero() {
       <p className="eyebrow hero-overline">Independent video editor & visual storyteller</p>
       <div className="hero-stage">
         <div className="hero-greeting">
-          <h1 id="hero-title" className="display hero-hello">HELLO<span className="hello-period">.</span></h1>
+          <h1 id="hero-title" className="display hero-hello">HELLO<span className="hello-period">.</span><span className="sr-only"> I'm Anuj, a video editor and visual storyteller.</span></h1>
           <p className="hero-code">{'{{ i’m anuj }}'}<span className="type-cursor" aria-hidden="true" /></p>
         </div>
         <div className="hero-portrait">
